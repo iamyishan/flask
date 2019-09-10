@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+这是模板<br>
+<!--这是一个代码块-->
+{{url_str}}<br>
+<!--列表的使用-->
+{{my_list}}<br>
+{{my_list.2}}<br>
+{{my_list[2]}}<br>
+
+<!--字典的使用-->
+{{my_dict}}<br>
+{{my_dict.name}}<br>
+{{my_dict['name']}}<br>
+
+<!--模板for循环-->
+{% for num in my_list %}
+<!--数据大于2才显示-->
+    {% if num>2 %}
+       {{num}}<br>
+    {% endif %}
+{% endfor %}
+
+<!--过滤器-->
+
+<!--字符串变大些-->
+{{url_str | upper}} <br>
+<!--字符串反转-->
+{{url_str | reverse}} <br>
+
+<!--过滤器的链式调用-->
+{{url_str | upper |reverse}}<br>
+
+
+</body>
+</html>
