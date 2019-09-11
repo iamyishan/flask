@@ -6,10 +6,15 @@
 </head>
 <body>
 <form action="/form" method="post">
+    {{form.csrf_token()}}
     {{form.username.label}}{{form.username}} <br>
     {{form.password.label}}{{form.password}}<br>
     {{form.password2.label}}{{form.password2}}<br>
     {{form.submit}}
 </form>
+<!-- 使用遍历获取闪现的消息-->
+    {% for message in get_flashed_messages() %}
+        {{message}}
+    {% endfor %}
 </body>
 </html>
