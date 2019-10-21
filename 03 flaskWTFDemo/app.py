@@ -38,7 +38,9 @@ class LoginForm(FlaskForm):
 @app.route('/form', methods=["GET", "POST"])
 def login():
     login_form = LoginForm()
-    # 1.判断请求方式
+    1.
+    # 判断请求方式
+    # request:请求对象
     if request.method == "POST":
         # 2.获取请求方式
         username = request.form.get('username')

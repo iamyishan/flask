@@ -108,7 +108,7 @@
 
 ### 四、web表单
 
-**采用扩展Flask-WTF**
+在flask中，**采用扩展Flask-WTF**处理web表单
 
 WTForm支持html标准字段
 
@@ -137,4 +137,22 @@ WTForm支持html标准字段
       {% endfor %}
   ~~~
 
-### 六、flask使用数据库
+### 六、Flask中使用数据库
+
+#### 6.1flask-SQLALchemy扩展
+
+- SQLAlchemy实际上是对数据库的抽象，让开发者不直接和SQL语句打交道，而是python对象操作数据库，在舍弃一些性能开销的同时，换来的而开发效率的较大提升
+- SQLAlchemy 是一个关系数据库框架，它提供了高层的ORM和底层的原生数据库的操作，flask-sqlalchemy操作的flask扩展
+
+#### 6.2安装flask-sqlalchemy
+
+~~~shell
+pip install flask-sqlalchemy
+~~~
+
+如果是连接mysql数据库，需要安装mysqldb
+
+~~~python
+pip install flask-mysqldb
+~~~
+

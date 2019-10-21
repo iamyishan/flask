@@ -7,10 +7,10 @@ from app import Role
 app = Flask(__name__)
 
 #配置数据的地址
-app.config["SQLALCHEMY_DATABASE_URI"]='mysql://127.0.0.1:3306/test?user=root?password=tylin@123'
+app.config["SQLALCHEMY_DATABASE_URI"]='mysql://127.0.0.1:3306/tylindb?user=root&password=tylin@123'
 #跟踪数据库的修改--》不建议开启，未来的版本中会移除
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
-
+#创建数据库对象
 db=SQLAlchemy(app)
 
 '''
@@ -30,6 +30,7 @@ class Role(db.Model):
 class User(db.Model):
     __tablename__="users"
     id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(16),unique=True)
     #db.Foreigenkey("roles.id")表示外键，表名.id
     role_id=db.Column(db.Integer,db.ForeignKey("roles.id"))
 
