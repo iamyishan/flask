@@ -42,7 +42,7 @@
     | float  | 同 int ，但是接受浮点数    |
     | *path* | 和默认的相似，但也接受斜线 |
 
-### 三、Jinja2模型引擎
+### 三、Jinja2模板引擎
 
 - 引入render_template
 
@@ -125,10 +125,10 @@ WTForm支持html标准字段
 
 - 使用Flask-WTF实现表单：
 
-### 五、flash扩展
+### 五、flask扩展
 
 - 用途：给模板传递消息，模板中需要遍历消息
-  flash 需要设置secret_key，做加密消息混淆
+  flask 需要设置secret_key，做加密消息混淆
 
   ~~~html
   <!-- 使用遍历获取闪现的消息-->

@@ -2,6 +2,8 @@
 from flask import Flask, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 
+from app import Role
+
 app = Flask(__name__)
 
 #配置数据的地址
@@ -44,3 +46,4 @@ if __name__ == '__main__':
     #创建表
     db.create_all()
     app.run(debug=True)
+u

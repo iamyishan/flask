@@ -4,7 +4,7 @@
 from flask import Flask,render_template
 
 # 2.创建Flask应用程序实例
-# 需要传入__naem__，作用是为了确定资源所在路径
+# 需要传入__name__，作用是为了确定资源所在路径
 app=Flask(__name__)
 
 #3.定义路由及视图函数
