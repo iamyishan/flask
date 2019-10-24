@@ -5,6 +5,35 @@
     <title>book</title>
 </head>
 <body>
-<h1>book</h1>
+<form  action="/" method="post">
+    {{form.csrf_token()}}
+    {{form.author.label}}{{form.author}} <br>
+    {{form.book.label}}{{form.book}} <br>
+    {{form.submit}}
+    {# 显示消息闪现内容 #}
+    {% for message in get_flashed_messages() %}
+       {{ message }}
+    {% endfor %}
+
+
+</form>
+<hr>
+{#先遍历作者，然后在作者里遍历书籍#}
+<ul>
+    {%for author in authors %}
+    <li>{{author.name}} <a href="{{url_for('delete_author',author_id=author.id)}}">删除</a> </li>
+    <li>
+        <ul>
+            {%for book in author.books %}
+            {# delete_book是后端视图函数名，book_id是该函数的参数 #}
+            <li>{{book.name}}<a href="{{url_for('delete_book',book_id=book.id)}}">删除</a></li>
+            {% else %}
+            <li>无</li>
+
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
 </body>
 </html>
